@@ -1,19 +1,21 @@
 using UnityEngine;
+using TMPro;
 
 public class CircleIndicator : MonoBehaviour
 {
     public Camera mainCamera;
     public GameObject targetObject;
     public RectTransform indicator;
+    public TMP_Text distanceText;
 
     void LateUpdate()
     {
         Vector3 screenPosition = GetScreenPosition();
 
-        float dist = Vector3.Distance(mainCamera.transform.position, targetObject.transform.position);
+        float distance = Vector3.Distance(mainCamera.transform.position, targetObject.transform.position);
 
         // If the object is very close, hide the indicator, otherwise no
-        if (IsOnScreen() && dist < 5f)
+        if (IsOnScreen() && distance < 3f)
         {
             indicator.localScale = Vector3.zero;
         }
@@ -21,6 +23,9 @@ public class CircleIndicator : MonoBehaviour
         {
             indicator.localScale = Vector3.one;
         }
+
+        string text = distance.ToString("#0.0") + "m";
+        distanceText.text = text;
         
         if (!IsOnScreen())
         {
