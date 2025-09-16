@@ -9,22 +9,36 @@ public class CircleIndicator : MonoBehaviour
     {
         Vector3 screenPosition = GetScreenPosition();
 
-        RectTransform rect = (RectTransform)transform;
+        RectTransform ui = (RectTransform)transform;
+
+        float dist = Vector3.Distance(mainCamera.transform.position, targetObject.transform.position);
+
+        // If the object is very close, hide the indicator, otherwise no
+        if (IsOnScreen() && dist < 5f)
+        {
+            ui.localScale = Vector3.zero;
+        }
+        else
+        {
+            ui.localScale = Vector3.one;
+        }
         
+        // to avoid the object is in the back
         if (screenPosition.z <= 0)
         {
             screenPosition.x = Screen.width - screenPosition.x;
             screenPosition.y = Screen.height - screenPosition.y;
             screenPosition.z = 1;
         }
-
+        
         if (!IsOnScreen())
         {
-            screenPosition.x = Mathf.Clamp(screenPosition.x, 20f, Screen.width  - 20f);
+            screenPosition.x = Mathf.Clamp(screenPosition.x, 20f, Screen.width - 20f);
             screenPosition.y = Mathf.Clamp(screenPosition.y, 20f, Screen.height - 20f);
         }
 
-        rect.anchoredPosition = new Vector2(
+        // place the indicator in the right place
+        ui.anchoredPosition = new Vector2(
             screenPosition.x - Screen.width  * 0.5f,
             screenPosition.y - Screen.height * 0.5f);
     }
