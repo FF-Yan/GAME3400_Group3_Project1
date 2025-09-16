@@ -6,6 +6,7 @@ public class MouseMovement : MonoBehaviour
 {
     public float mouseSensitivity = 100f;
 
+
     float xRotation = 0f;
     float YRotation = 0f;
 
