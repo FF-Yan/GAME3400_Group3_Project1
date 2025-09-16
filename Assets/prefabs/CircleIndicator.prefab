@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5301309562710935386}
   - component: {fileID: 6363869942023990929}
   - component: {fileID: 7074113368818264360}
+  - component: {fileID: 7086808524231034182}
   m_Layer: 5
   m_Name: CircleIndicator
   m_TagString: Untagged
@@ -44,7 +45,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44240157672488515}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!114 &7074113368818264360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +76,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7086808524231034182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44240157672488515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edefdc67dcf454377817823b64799033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  targetObject: {fileID: 0}
