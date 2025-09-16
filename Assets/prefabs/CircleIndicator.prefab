@@ -90,3 +90,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   targetObject: {fileID: 0}
+  indicator: {fileID: 5301309562710935386}
